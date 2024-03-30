@@ -23,6 +23,45 @@ int main() {
 	int k;
 	double A;
 	clock_t start, end;
+	// sanity check
+	A = drand(-1000000.0, 1000000.0);
+	srand(time(0));
+
+	for (j = 0; j < 5; j++) {
+		X[j] = drand(-1000000.0, 1000000.0);
+	}
+
+	for (j = 0; j < 5; j++) {
+		Y[j] = drand(-1000000.0, 1000000.0);
+	}
+
+	//assembly solution
+	Compute(X, Y, Z, &A, i);
+	//C solution
+	for (j = 0; j < i; j++) {
+		Z1[j] = X[j] * A + Y[j];
+	}
+	printf("\nSANITY CHECK\nA:\n%lf", A);
+	printf("\nVector Y:\n");
+	for (j = 0; j < 5; j++) {
+		printf("%lf ", X[j]);
+	}
+	printf("\nVector X:\n");
+	for (j = 0; j < 5; j++) {
+		printf("%lf ", Y[j]);
+	}
+	printf("\nVector Z Assembly:\n");
+	for (j = 0; j < 5; j++) {
+		printf("%lf ", Z[j]);
+	}
+	printf("\nVector Z C:\n");
+	for (j = 0; j < 5; j++) {
+		printf("%lf ", Z1[j]);
+	}
+	printf("\n\nTIME COMPARISON:");
+
+
+	//time comparison
 	for (k = 0; k < 30; k++) {
 		A = drand(-1000000.0, 1000000.0);
 		srand(time(0));
@@ -34,7 +73,7 @@ int main() {
 		for (j = 0; j < i; j++) {
 			Y[j] = drand(-1000000.0, 1000000.0);
 		}
-		printf("run %d,", k);
+		printf("\nrun %d,", k);
 		start = clock();
 		//assembly solution
 		Compute(X, Y, Z, &A, i);
@@ -47,7 +86,7 @@ int main() {
 			Z1[j] = X[j] * A + Y[j];
 		}
 		end = clock();
-		printf("%lf\n", (double)(end - start) / CLOCKS_PER_SEC);
+		printf("%lf", (double)(end - start) / CLOCKS_PER_SEC);
 		for (j = 0; j < i; j++) {
 			if (Z1[j] != Z[j]) {
 				printf("ERROR MISMATCH VALUE AT INDEX %d", j);
