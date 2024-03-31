@@ -57,7 +57,9 @@ To cover a range of input sizes, the vector sizes ($n$) that will be tested are 
 | 30    | 0.001000| 0.002000|         | 0.019000| 0.027000|         | 0.356000| 0.464000|
 |<b>Average</b>|<b>0.001300</b>|	<b>0.001867</b>|         | <b>0.019100</b>|	<b>0.028267</b>|         | <b>0.335567</b>|	<b>0.515033</b>|
 
-As expected, when Debug Mode is active, the x86-64-based kernel significantly outperforms the C-based kernel across the board. This difference in execution speed may be attributed to the fact that Assembly generally results in fewer instructions than C after translating them both into machine code. This directly leads to a shorter execution time, as the computer needs to execute fewer instructions to compute for the desired result. In this light, the results shown above clearly reflect how C is overall slower than x86-64, at least without performing proper optimization.
+As expected, when Debug Mode is active, the x86-64-based kernel significantly outperforms the C-based kernel across the board. This difference in execution speed may be attributed to the fact that Assembly generally results in fewer instructions than C after translating them both into machine code. 
+
+This directly leads to a shorter execution time, as the computer needs to execute fewer instructions to compute for the desired result. In this light, the results shown above clearly reflect how C is overall slower than x86-64, at least without performing proper optimization.
 
 ### Execution Time (in Seconds): x86-64 vs C (Release Mode)
 | Run   | x86-64   |    C       |           |   x86-64 |    C       |           | x86-64   |    C       |
@@ -95,7 +97,9 @@ As expected, when Debug Mode is active, the x86-64-based kernel significantly ou
 | 30    | 0.002000 | 0.001000   |           | 0.020000 | 0.019000   |           | 0.351000 | 0.290000   |
 |<b>Average</b>|<b>0.000967</b>|<b>0.000900 </b>|           |<b>0.018700 </b>|<b>0.018167 </b>  |           |<b>0.318067</b> |<b>0.307433</b> |
 
-On the other hand, when Release Mode is active, the C-based kernel now outperforms the x86-64-based kernel as a whole, albeit only by a slight margin. This may be due to the fact that the various optimizations performed by Release Mode are significant enough to outweigh the time saved by coding in Assembly. Said optimizations may include function inlining, dead code elimination, loop unrolling, and many more. Although they all serve to improve performance at runtime, these optimizations also greatly hinder debugging and significantly reduce code readability. All in all, the results displayed above demonstrate the progress C compilers have made in terms of optimizing code, as well as how x86-64 Assembly still fairs relatively well even when faced with such optimized C code.
+On the other hand, when Release Mode is active, the C-based kernel now outperforms the x86-64-based kernel as a whole, albeit only by a slight margin. This may be due to the fact that the various optimizations performed by Release Mode are significant enough to outweigh the time saved by coding in Assembly. Said optimizations may include function inlining, dead code elimination, loop unrolling, and many more. 
+
+Although they all serve to improve performance at runtime, these optimizations also greatly hinder debugging and significantly reduce code readability. All in all, the results displayed above demonstrate the progress C compilers have made in terms of optimizing code, as well as how x86-64 Assembly still fairs relatively well even when faced with such optimized C code.
 
 ## Sample Run of The Program (With Sanity/Correctness Checks)
 
