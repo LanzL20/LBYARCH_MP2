@@ -110,7 +110,7 @@ On the other hand, when Release Mode is active, the C-based kernel now outperfor
 
 #### The code snippet below illustrates how the program checks between the outputs of the two kernels, throwing an error in the case that they are detected to be different.
 ![image](https://github.com/LanzL20/LBYARCH_MP2/assets/68149934/727a1763-230a-44a1-aa70-aa0a7605d046)
-#### In light of this, so long as all runs indicate that the results have matched, then one may finally be ensured that the results shown are indeed correct and free of error.
+#### In light of this, so long as all runs indicate that their results have matched, then one may finally be ensured that the results shown are indeed correct and free of error.
 
 ## Authors of This Project
 ### LBYARCH S13 Pair 8
