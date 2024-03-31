@@ -19,7 +19,7 @@ Notably, Release Mode applies some or all optimizations possible, resulting in t
 Since this choice of mode greatly impacts execution time, two sets of comparisons will be made, C (Debug) vs x86-64 and C (Release) vs x86-64.
 
 Furthermore, in order to compute for an average execution time, thirty (30) runs will be performed for each set of tests.
-To cover a range of input sizes, the vector sizes ($n%) that will be tested are $2^{20}$, $2^{24}$, and $2^{28}$. 
+To cover a range of input sizes, the vector sizes ($n$) that will be tested are $2^{20}$, $2^{24}$, and $2^{28}$. 
 
 ### Execution Time (in Seconds): x86-64 vs C (Debug Mode)
 | Run   | x86-64  | C       |         | x86-64  | C       |         | x86-64  | C       |
