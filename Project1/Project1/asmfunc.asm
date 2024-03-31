@@ -19,7 +19,7 @@ Compute:
 	; X Y Z A i: rcx rdx r8 r9 r10
 	; xmm0 is temp sum.
 	; r11 is loop counter.
-	; xmm1 contains A (deferenced).
+	; xmm1 contains A (dereferenced).
 	mov r11, 0
 	movsd xmm1, [r9]
 
