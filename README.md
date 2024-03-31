@@ -5,7 +5,7 @@ The specifications of both kernels, as well as the results of the analysis, may 
 
 ## Task: Perform the DAXPY Function
 ### Given the inputs...<br>
-$n$: Length of the Vectors (Integer)<br>
+$n$: Integer Length of the Vectors<br>
 $A$: Double-Precision Float<br>
 $X$: Vector of Double-Precision Floats<br>
 $Y$: Vector of Double-Precision Floats<br>
