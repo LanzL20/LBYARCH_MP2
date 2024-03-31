@@ -11,7 +11,7 @@ $X$: Vector of Double-Precision Floats<br>
 $Y$: Vector of Double-Precision Floats<br>
 ### ...use the formula...<br>
 $Z[i]=A*X[i]+Y[i]$
-### ...to calculate the output $Z$.<br>
+### ...to calculate the output vector $Z$.<br>
 
 ## Performance of Both Kernels
 When compiling C code, there are two distinct settings that the compiler may take, namely Debug Mode and Release Mode.
