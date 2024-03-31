@@ -11,25 +11,27 @@ extern printf
 
 global Compute
 Compute:
-push rbp
-mov rbp,rsp
-add rbp, 16
-mov r10, qword [rbp+32]
-;xmm0 is temp sum
-;r11 is loop counter
-mov r11,0
-movsd xmm1,[r9]
+	push rbp
+	mov rbp, rsp
+	add rbp, 16
+	mov r10, qword [rbp + 32]
 
-;rcx rdx r8 r9 r10
+	; X Y Z A i: rcx rdx r8 r9 r10
+	; xmm0 is temp sum.
+	; r11 is loop counter.
+	; xmm1 contains A (deferenced).
+	mov r11, 0
+	movsd xmm1, [r9]
+
 loopstart:
-movsd xmm0, [rcx+r11*8]
-vmulsd xmm0,xmm0,xmm1
-vaddsd xmm0,xmm0, [rdx + r11*8]
-movsd [r8 + r11*8], xmm0
+	movsd xmm0, [rcx + r11 * 8]
+	vmulsd xmm0, xmm0, xmm1
+	vaddsd xmm0, xmm0, [rdx + r11 * 8]
+	movsd [r8 + r11 * 8], xmm0
 
-inc r11
-cmp r11, r10
-jnz loopstart
+	inc r11
+	cmp r11, r10
+	jnz loopstart
 
-pop rbp
-ret
+	pop rbp
+	ret
