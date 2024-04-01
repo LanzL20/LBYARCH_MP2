@@ -106,11 +106,11 @@ Although they all serve to improve performance at runtime, these optimizations a
 #### To start off, the program asks for the intended value of $n$ before it produces randomized vectors for $X$ and $Y$ of said size.
 ![image](https://github.com/LanzL20/LBYARCH_MP2/assets/68149934/8d60f049-9e3d-4616-ae76-d634151a84b8)
 
-#### To ensure the correctness of the programs, the outputs of both the C-based and x86-64-based programs are compared to verify that they are indeed the same. Before the execution of the main program, a simple "sanity check" is performed (i.e., a sample run of $n=5$).
-![image](https://github.com/LanzL20/LBYARCH_MP2/assets/68149934/14af3731-f343-4a4f-b2d9-8c96c62b19ff)
+#### To ensure the correctness of the programs, the outputs of both the C-based and x86-64-based programs are compared to verify that they are indeed the same. Before the execution of the main program, a simple "sanity check" is performed (i.e., a sample run of $n=15$).
+![image](https://github.com/LanzL20/LBYARCH_MP2/assets/68149934/db49b768-9bd8-453c-a866-9091abc5db03)
 
 #### Proceeding to the main portion of the program, a total of thirty (30) runs is executed with the inputted value of $n$. Each run indicates the execution time of both C-based and x64-64-based kernels, as well as whether or not their outputs match or not.
-![image](https://github.com/LanzL20/LBYARCH_MP2/assets/68149934/0cff269a-2121-405c-95a5-300eee68b930)
+![image](https://github.com/LanzL20/LBYARCH_MP2/assets/68149934/256f0b28-7493-49e4-ab14-f5d8a06b3ae9)
 
 #### The code snippet below illustrates how the program checks between the outputs of the two kernels, throwing an error in the case that they are detected to be different.
 ![image](https://github.com/LanzL20/LBYARCH_MP2/assets/68149934/727a1763-230a-44a1-aa70-aa0a7605d046)
