@@ -1,6 +1,17 @@
-﻿  Performing Custom Build Tools
+﻿  main.c
+C:\Users\tyler\Documents\School Work\Acad Files\Year 3\Term 7\LBYARCH, Introduction to Computer Organization and Architecture Laboratory\MP2\LBYARCH_MP2\Project1\Project1\main.c(33,18): warning C4013: 関数 'getpid' は定義されていません。int 型の値を返す外部関数と見なします。
+C:\Users\tyler\Documents\School Work\Acad Files\Year 3\Term 7\LBYARCH, Introduction to Computer Organization and Architecture Laboratory\MP2\LBYARCH_MP2\Project1\Project1\main.c(33,16): warning C4244: '関数': 'time_t' から 'unsigned int' への変換です。データが失われる可能性があります。
+C:\Users\tyler\Documents\School Work\Acad Files\Year 3\Term 7\LBYARCH, Introduction to Computer Organization and Architecture Laboratory\MP2\LBYARCH_MP2\Project1\Project1\main.c(111,12): warning C4477: 'printf' : 書式文字列 '%d' には、型 'int' の引数が必要ですが、可変個引数 1 は型 '__int64' です
+  C:\Users\tyler\Documents\School Work\Acad Files\Year 3\Term 7\LBYARCH, Introduction to Computer Organization and Architecture Laboratory\MP2\LBYARCH_MP2\Project1\Project1\main.c(111,12):
+  書式文字列に '%lld' を使用することをお勧めします
+  C:\Users\tyler\Documents\School Work\Acad Files\Year 3\Term 7\LBYARCH, Introduction to Computer Organization and Architecture Laboratory\MP2\LBYARCH_MP2\Project1\Project1\main.c(111,12):
+  書式文字列に '%Id' を使用することをお勧めします
+  C:\Users\tyler\Documents\School Work\Acad Files\Year 3\Term 7\LBYARCH, Introduction to Computer Organization and Architecture Laboratory\MP2\LBYARCH_MP2\Project1\Project1\main.c(111,12):
+  書式文字列に '%I64d' を使用することをお勧めします
+  
   コード生成しています。
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-  All 9 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1 of 9 functions (11.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   Project1.vcxproj -> C:\Users\tyler\Documents\School Work\Acad Files\Year 3\Term 7\LBYARCH, Introduction to Computer Organization and Architecture Laboratory\MP2\LBYARCH_MP2\Project1\x64\Release\Project1.exe

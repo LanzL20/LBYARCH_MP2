@@ -12,6 +12,7 @@ double drand(double low, double high)
 extern void Compute(double* X, double* Y, double* Z, double* A, long long int i);
 
 int main() {
+
 	// Initialize variables needed for the program.
 	long long int i;
 	printf("Length of Each Vector: ");
@@ -21,7 +22,7 @@ int main() {
 	double* Y = malloc(sizeof(double) * i);
 	double* Z = malloc(sizeof(double) * i);
 	double* Z1 = malloc(sizeof(double) * i);
-
+	
 	long long int j;
 	int k;
 	double A;
@@ -29,57 +30,57 @@ int main() {
 
 	// Sanity Check
 	printf("\n-------------------------------------\n");
+	srand(time(0) + getpid());
 	A = drand(-1000000.0, 1000000.0);
-	srand(time(0));
 
-	for (j = 0; j < 5; j++) {
+	for (j = 0; j < 15; j++) {
 		X[j] = drand(-1000000.0, 1000000.0);
 	}
 
-	for (j = 0; j < 5; j++) {
+	for (j = 0; j < 15; j++) {
 		Y[j] = drand(-1000000.0, 1000000.0);
 	}
 
 	// Sanity Check: Assembly Solution
-	Compute(X, Y, Z, &A, i);
+	Compute(X, Y, Z, &A, 15);
 	// Sanity Check: C Solution
-	for (j = 0; j < i; j++) {
+	for (j = 0; j < 15; j++) {
 		Z1[j] = X[j] * A + Y[j];
 	}
 
 	// Compare the results of the assembly and C solutions.
-	printf("\nSANITY CHECK: Assembly vs C\n\nA: %lf", A);
-	printf("\nVector Y: [");
-	for (j = 0; j < 5; j++) {
+	printf("\nSANITY CHECK: Sample Run of n=15 (Only First 10 Elements Displayed for Output)\n\nA: %lf", A);
+	printf("\nVector X: [");
+	for (j = 0; j < 15; j++) {
 		printf("%lf", X[j]);
-		if(j != 4) printf(", ");
+		if (j != 14) printf(", ");
 	}
-	printf("]\nVector X: [");
-	for (j = 0; j < 5; j++) {
+	printf("]\nVector Y: [");
+	for (j = 0; j < 15; j++) {
 		printf("%lf", Y[j]);
-		if (j != 4) printf(", ");
+		if (j != 14) printf(", ");
 	}
 	printf("]\nVector Z ASM: [");
-	for (j = 0; j < 5; j++) {
+	for (j = 0; j < 10; j++) {
 		printf("%lf", Z[j]);
-		if (j != 4) printf(", ");
+		if (j != 9) printf(", ");
 	}
 	printf("]\nVector Z C:   [");
-	for (j = 0; j < 5; j++) {
+	for (j = 0; j < 10; j++) {
 		printf("%lf", Z1[j]);
-		if (j != 4) printf(", ");
+		if (j != 9) printf(", ");
 	}
 	printf("]");
 
 
 	// Time Comparison
 	printf("\n\n-------------------------------------");
-	printf("\n\nTIME COMPARISON: Assembly vs C (In Seconds)\n");
+	printf("\n\nTIME COMPARISON (In Seconds)\n");
 
+	printf("\n       [Assembly,    C     |      Match?     ]");
 	// Run the program 30 times and compare the time taken by the assembly and C solutions.
 	for (k = 0; k < 30; k++) {
 		A = drand(-1000000.0, 1000000.0);
-		srand(time(0));
 
 		for (j = 0; j < i; j++) {
 			X[j] = drand(-1000000.0, 1000000.0);
@@ -111,6 +112,7 @@ int main() {
 				return 0;
 			}
 		}
+		printf(" | Results Matched!");
 	}
 	return 0;
 }
